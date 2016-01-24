@@ -116,7 +116,7 @@ public class Main {
         addFloatsKernel.setArgs(a, b, out, n);
         CLEvent addEvt = addFloatsKernel.enqueueNDRange(queue, new int[] { n });
 
-        Pointer<Float> outPtr = out.read(queue, addEvt); // blocks until add_floats finished
+        Pointer<Float> outPtr = out.read(queue, addEvt); // blocks until calculate_pi finished
 
         // Print the first 10 output values :
         for (int i = 0; i < 10 && i < n; i++)

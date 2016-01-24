@@ -12,3 +12,12 @@ __kernel void calculate_pi(__global const int* start, __global const int* end, _
     printf("Start: %d, End: %d", start[0], end[0]);
     //for(i=start; i < *end)
 }
+__kernel void calculate_pi_test(__global const int* start, __global const int* end, __global float* out)
+{
+    int i;
+    float erg=0;
+    for(i=start;i < end;++i) {
+        erg += (float)(1)/(i*i);
+    }
+    out[0]=erg;
+}
